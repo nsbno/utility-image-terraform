@@ -2,7 +2,7 @@ FROM vydev/awscli:latest as resource
 RUN apk add --update --no-cache \
     curl \
     bash
-RUN curl -o terraform.zip https://releases.hashicorp.com/terraform/0.12.30/terraform_0.12.30_linux_amd64.zip && \
+RUN curl -o terraform.zip https://releases.hashicorp.com/terraform/0.13.6/terraform_0.13.6_linux_amd64.zip && \
     echo "terraform.zip" | unzip terraform.zip && mv terraform /usr/bin && rm terraform.zip
 
 FROM resource
