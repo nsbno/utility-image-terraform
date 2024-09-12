@@ -1,5 +1,5 @@
 FROM vydev/awscli:latest as resource
-ARG TERRAFORM_VERSION=1.9.1
+ARG TERRAFORM_VERSION=1.9.5
 
 RUN apk add --update --no-cache \
     curl \
