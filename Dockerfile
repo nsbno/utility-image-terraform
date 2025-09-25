@@ -1,4 +1,4 @@
-FROM python:3.13-alpine as resource
+FROM python:3.11-alpine as resource
 ARG TERRAFORM_VERSION=1.13.3
 ARG AWSCLI_VERSION=1.42.38
 
