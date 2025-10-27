@@ -11,6 +11,10 @@ on:
 
 name: Package Image to Public ECR Repo
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   package-and-upload-image:
     name: Upload Docker Image to Public ECR Repo
