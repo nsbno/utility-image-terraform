@@ -2,6 +2,12 @@ on:
   push:
     tags:
       - '*.*.*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        type: string
+        required: true
+        description: Which tag to publish to
 
 name: Package Image to Public ECR Repo
 
@@ -40,5 +46,5 @@ jobs:
           file: Dockerfile
           push: true
           tags: |
-            ${{ steps.login-ecr-public.outputs.registry }}/${{ inputs.repo-name || inputs.ecr-repo-name }}:${{ env.RELEASE_VERSION }}
-            ${{ steps.login-ecr-public.outputs.registry }}/${{ inputs.repo-name || inputs.ecr-repo-name }}:latest
+            ${{ steps.login-ecr-public.outputs.registry }}/d4l5s1z7/vydev-terraform:${{ inputs.tag || env.RELEASE_VERSION }}
+            ${{ steps.login-ecr-public.outputs.registry }}/d4l5s1z7/vydev-terraform:latest
