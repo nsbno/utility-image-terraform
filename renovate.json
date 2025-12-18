@@ -7,5 +7,24 @@
       "automerge": false
     }
   ],
-  "branchPrefix": "renovate-"
+  "branchPrefix": "renovate-",
+  "regexManagers": [
+    {
+      "fileMatch": ["^Dockerfile$"],
+      "matchStrings": [
+        "ARG TERRAFORM_VERSION=(?<currentValue>.*?)"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "hashicorp/terraform",
+      "extractVersionTemplate": "^v(?<version>.*)$"
+    },
+    {
+      "fileMatch": ["^Dockerfile$"],
+      "matchStrings": [
+        "ARG AWSCLI_VERSION=(?<currentValue>.*?)"
+      ],
+      "datasourceTemplate": "pypi",
+      "depNameTemplate": "awscli"
+    }
+  ]
 }
