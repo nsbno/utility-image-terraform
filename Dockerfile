@@ -1,5 +1,5 @@
 FROM python:3.11-alpine as resource
-ARG TERRAFORM_VERSION=1.14.3
+ARG TERRAFORM_VERSION=1.15.5
 ARG AWSCLI_VERSION=1.42.38
 
 RUN apk add --update --no-cache \
